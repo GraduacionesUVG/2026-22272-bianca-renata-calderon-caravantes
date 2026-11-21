@@ -1,0 +1,19 @@
+{
+  "name": "gymify",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Gymify: sistema de gamificación social para aumentar la adherencia al entrenamiento. Backend en Go (backend/) y frontend en React Native + Expo (frontend/).",
+  "scripts": {
+    "install:frontend": "npm --prefix frontend install",
+    "start": "npm --prefix frontend start",
+    "web": "npm --prefix frontend run web",
+    "android": "npm --prefix frontend run android",
+    "ios": "npm --prefix frontend run ios",
+    "backend": "cd backend && go run ./cmd/server",
+    "backend:dbcheck": "cd backend && go run ./cmd/dbcheck",
+    "backend:test": "cd backend && go test ./..."
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

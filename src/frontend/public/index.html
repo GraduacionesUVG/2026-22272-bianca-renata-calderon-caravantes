@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <!--
+      Sin viewport-fit=cover a propósito: así iOS deja el contenido fuera de la
+      zona de la hora/Dynamic Island y del indicador inferior. Con "cover"
+      habría que añadir env(safe-area-inset-*) en cada pantalla.
+    -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Gymify</title>
+
+    <!-- PWA: instalación desde "Añadir a pantalla de inicio" -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#0E0E0E" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- iPhone/iPad (Safari no usa todos los campos del manifest) -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Gymify" />
+    <!-- "black" (opaca): el contenido empieza debajo de la barra de estado.
+         "black-translucent" lo metería debajo de la hora y la Dynamic Island. -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+        /* Mismo color que la barra de pestañas: en iPhone, la franja del
+           indicador de inicio (abajo) muestra este fondo. */
+        background-color: #18181e;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Necesitas activar JavaScript para usar Gymify.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
